@@ -13,7 +13,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     // imprimindo o nome atribuido do formulario 
     echo "Nome: " . $_POST['nome'] . "<br>";
     // imprimindo o semestre atribuido do formulario 
-    echo "Semestre atual: " . $_POST['semestre'] . "<br>";
+    echo "Semestre atual: " . $_POST['semestre'] . " ° <br>";
     
     // criando uma variavel para guardar o valor do semestre 
     $semestreAtual = $_POST['semestre'];
@@ -30,12 +30,15 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     // imprimindo o numero da tabuada
     echo "Tabuada do: " . $_POST['numeroEscolhido'] . "<br>";
 
+    // criando a varialvel numero escolhido e exibindo 
+    $numeroEscolhido = $_POST['numeroEscolhido'];
+
     // se (verifica se numeroEscolhido) existe 
     if (isset($numeroEscolhido)) {
         // faça (laço de repetição de 0 até 10)
     for ($i = 0; $i <= 10; $i++) {
-
-        // exibe na tela a multiplicação do número escolhido por $i
+        $tabuada = 0;
+        // exibe na tela a multiplicação do número escolhido por $i 
         echo "$tabuada = $numeroEscolhido x $i = " . ($numeroEscolhido * $i) . "<br>";
     }
         // se não
@@ -44,6 +47,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
      echo "Digite um número!";
     }
 }
+
+
 
 ?>
 
@@ -75,9 +80,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
             <!-- corpo com conteudo do card-->
             <div class="card-body">
                 <!-- conteudos (variaveis) -->
-                <p class="card-text">Nome: <?= $nome ?> </p>
-                <p class="card-text">Semestre atual: <?= $nome ?> </p>
-                <p class="card-text">Semestre(s) que faltam : <?= $nome ?> </p>
+                <p class="card-text">Nome: <?= $_POST['nome'] ?> </p>
+                <p class="card-text">Semestre atual: <?= $semestreAtual ?> </p>
+                <p class="card-text">Semestre(s) que faltam : <?= $semestreFaltam ?> </p>
                 <p class="card-text">Tabuada do número:<?= $numeroEscolhido ?> </p>
                 <p class="card-text"> <?= $tabuada ?> </p>
             </div>

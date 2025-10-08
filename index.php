@@ -22,26 +22,32 @@
 <body>
 
     <!-- Formulario (action="envia os inputs pro recebe-form.php) com o metodo (method="POST)-->
-    <form action="recebe-form.php" method="POST">
+    <!-- adicionando css no formulario-->
+    <form class="container" action="recebe-form.php" method="POST"
+    style="max-width: 960px; display: block; flex-wrap: wrap ;">
 
         <!-- divisão do formulario (digite su nome)-->
-        <div class="mb-3">
+        <!-- adicionando padding e margin-->
+        <div class="mb-3" style="padding: 5px; margin: 5px;">
             <label for="nome" class="form-label">Digite Seu Nome </label>
-            <input type="text" class="form-control" id="nome" placeholder="Digite aqui seu Nome: ">
+            <input type="text" class="form-control" id="nome" name="nome" placeholder="Digite aqui seu Nome: ">
         </div>
 
 
         <!-- divisão do formulario (Qual semestre)-->
-        <select for="semestre" class="form-select" aria-label="Default select example">
+        <!-- adicionando padding e margin-->
+        <div class="mb-3" style="padding: 5px; margin: 5px;">
+        <label for="semestre" class="form-label">Informe seu semetre atual: </label>
+        <select for="semestre" class="form-select" name="semestre">
             <option selected>Qual semestre você está? </option>
             <option value="1">1°</option>
             <option value="2">2°</option>
             <option value="3">3°</option>
-            <option value="3">4°</option>
-            <option value="3">5°</option>
-            <option value="3">6°</option>
+            <option value="4">4°</option>
+            <option value="5">5°</option>
+            <option value="6">6°</option>
         </select>
-
+        </div>
            <!-- Outra forma de fazer escolha dos semestre
         <div class="form-check form-check-inline">
             <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
@@ -54,7 +60,9 @@
         -->
 
         <!-- divisão do formulario (Escolha um número)-->
-        <select for="numeroEscolhido" class="form-select" aria-label="Large select example">
+         <div class="mb-3" style="padding: 5px; margin: 5px;">
+        <label for="nome" class="form-label">Informe um número de 1 ao 10:  </label>
+        <select for="numeroEscolhido" class="form-select" name="numeroEscolhido" >
             <option selected>Escolha um número de 1 a 10 </option>
             <option value="1">1</option>
             <option value="2">2</option>
@@ -67,13 +75,14 @@
             <option value="9">9</option>
             <option value="10">10</option>
         </select>
-     
-
+         </div>
+        <div class="mb-3" style="display: flex; padding: 15px; margin: 15px; justify-content: flex-first; gap: 20px">
         <!--Botão de limpar o formulario-->
-        <button type="reset" class="btn btn-warning">LIMPAR</button> <!-- warning limpa os campos -->
+        <button type="reset" class="btn btn-warning">LIMPAR</button> 
         <!--Botão de enviar o formulario-->
+        
         <button type="submit" class="btn btn-primary">Enviar</button>
-    
+        </div>
     </form>
 
 <!-- linka o javascript  -->
